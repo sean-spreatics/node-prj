@@ -1,4 +1,5 @@
 // 1. express 불러오기
+const { response } = require('express');
 const express = require('express');
 
 // 2. express 실행
@@ -31,6 +32,14 @@ app.get('/test', function (request, response) {
 
 app.get('/test2', function (request, response) {
   response.render('test2');
+});
+
+app.get('/weather', function (request, response) {
+  response.render('weather');
+});
+
+app.get('/slider', function (request, response) {
+  response.render('slider');
 });
 
 // 3. 로컬 서버 동작

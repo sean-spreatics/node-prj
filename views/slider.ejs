@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+
+    <style>
+      img {
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>미니 슬라이더 구현</h1>
+    <button onclick="clickBtn();">click</button><br /><br />
+    <img src="/static/image/apple.jpg" alt="" />
+    <img src="/static/image/bananas.jpg" alt="" />
+    <img src="/static/image/grapes.jpg" alt="" />
+    <img src="/static/image/peaches.jpg" alt="" />
+
+    <script>
+      const imgTags = document.querySelectorAll('img');
+      const imgs = ['apple', 'bananas', 'grapes', 'peaches'];
+      console.log(imgTags);
+      console.log(imgs);
+      let count = 0;
+
+      function clickBtn() {
+        imgTags[0].setAttribute('src', `/static/image/${imgs[count % 4]}.jpg`);
+        imgTags[1].setAttribute(
+          'src',
+          `/static/image/${imgs[(count + 1) % 4]}.jpg`
+        );
+        imgTags[2].setAttribute(
+          'src',
+          `/static/image/${imgs[(count + 2) % 4]}.jpg`
+        );
+        imgTags[3].setAttribute(
+          'src',
+          `/static/image/${imgs[(count + 3) % 4]}.jpg`
+        );
+        count = count + 1;
+      }
+    </script>
+  </body>
+</html>
